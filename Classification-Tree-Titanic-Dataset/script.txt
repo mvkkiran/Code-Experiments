@@ -1,0 +1,34 @@
+
+
+# load the libraries
+library("readxl", lib.loc="/Library/Frameworks/R.framework/Versions/3.3/Resources/library")
+
+# change the below path accordingly
+data<-read.csv("/Users/Kiran/Documents/MATLAB/train.csv")
+
+
+library("rpart", lib.loc="/Library/Frameworks/R.framework/Versions/3.3/Resources/library")
+
+fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked, data, method="class")
+
+plot(fit)
+
+# Install the below packages to plot decision tree with neat colored boxes.
+
+library(rattle)
+library("rattle", lib.loc="/Library/Frameworks/R.framework/Versions/3.3/Resources/library")
+library("rpart.plot", lib.loc="/Library/Frameworks/R.framework/Versions/3.3/Resources/library")
+library("RColorBrewer", lib.loc="/Library/Frameworks/R.framework/Versions/3.3/Resources/library")
+
+# use the below command to plot the decision tree
+fancyRpartPlot(fit)
+
+# Decision tree is ready! Now test some new samples.
+
+test<-read.csv("/Users/Kiran/Documents/MATLAB/test.csv")
+Prediction <- predict(fit, test, type = "class")
+submit <- data.frame(PassengerId = test$PassengerId, Survived = Prediction)
+# The below file will be saved to your home directory, that will have 0 and 1's for Passsenger ID's predicting their survival
+write.csv(submit, file = "/Users/Kiran/Documents/myfirstdtree.csv", row.names = FALSE)
+
+# Congratulations you are done with the classification tree example on Titanic training dataset.
