@@ -2,7 +2,7 @@ This is the first experiment in Machine Learning using R.
 
 The aim of this experiment is to model a classification tree (decision tree) for the given training data of Titanic and to test the model against the test data.
 
-The details of the Dataset is given below:
+# Dataset
 
 The data has been split into two groups:
 
@@ -43,8 +43,7 @@ Parent = mother, father
 Child = daughter, son, stepdaughter, stepson
 Some children travelled only with a nanny, therefore parch=0 for them.
 
-#Running the script
-
+# Running the script
 After all the necessary package installations as mentioned in the commands.txt file, if you want to run the whole script at once do the following:
 1. Type R in the terminal to start R command line.
 2. source("script.txt")
