@@ -5,4 +5,4 @@ The aim of this repo is to provide a better insight into various classification 
 
 Each folder in this repo corresponds to an experiment. Each experiment is containing a detail readme file and also all the scripts are written with enough comments for better understandability.
 
-Hello
+Lets get started...!
